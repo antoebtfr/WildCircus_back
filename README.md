@@ -2,18 +2,18 @@
 
 ### NEEDED DEPENDENCIES
 
-npm i express
-npm i cors
-npm i -D ts-node
-npm i -D typescript
-npm i body-parser
-npm i mysql 
+npm i express -
+npm i cors -
+npm i -D ts-node -
+npm i -D typescript -
+npm i body-parser -
+npm i mysql -
 (npm i promise-mysql)
 
-npm i -D @types/node
-npm i -D @types/express
-npm i -D @types/cors
-npm i -D @types/body-parser
+npm i -D @types/node -
+npm i -D @types/express -
+npm i -D @types/cors -
+npm i -D @types/body-parser - 
 npm i -D @types/mysql
 
 ## SETUP STEP BY STEP
@@ -30,7 +30,7 @@ npm i -D @types/mysql
 
 6. Exporter une function dedans prenant en paramètre une (app: Application);
 
-7. Créer un fichier 'express.ts' dans le fichier 'loaders' exportant lui aussi une fonction content les appels du cors et du body-parser sous le formant JSON
+7. Créer un fichier 'express.ts' dans le fichier 'loaders' exportant lui aussi une fonction contenant les appels du cors et du body-parser sous le formant JSON
 
 8. Appeler le ficher 'express.ts' dans la fonction exportée de 'loaders/index.ts'
 
@@ -44,7 +44,7 @@ npm i -D @types/mysql
 
 12. Créer une variable service de type UserService dans le fichier 'user.controller' et appelé la methode souhaitée
 
-13. Créer un dossier 'repository' avec un fichier 'user.repository.ts' content un classe dedans
+13. Créer un dossier 'repository' avec un fichier 'user.repository.ts' contenant une classe dedans
 
 14. Ajouter un fichier 'mysql.ts' dans le dossier 'loaders' et y ajouter la config mySql
 
