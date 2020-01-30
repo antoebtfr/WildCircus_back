@@ -1,13 +1,16 @@
+import { showController } from './controller/show.controller';
 import express from 'express';
 import loaders from './loaders';
-import userController from './controller/user.controller';
+import 'reflect-metadata';
+import { userController } from './controller/user.controller';
 
-function startServer() {
+async function startServer() {
     const app = express();
     const port = 3000;
     
-    loaders(app);
-    userController(app);
+    await loaders(app);
+    await userController(app);
+    await showController(app);
 
     app.listen(port, (err) => {
         if (err) {

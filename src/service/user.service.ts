@@ -1,9 +1,15 @@
+import { UserRepository } from './../repository/user.repository';
+import { User } from '../entity/user.entity';
+import { getCustomRepository } from "typeorm";
+
 export class UserService{
-    
-    getAll(){
-        return [
-            {id:1, name:"Bobby"},
-            {id:2, name:"Toby"},
-        ]
+    repo = getCustomRepository(UserRepository);
+
+    get() {
+        return this.repo.find();
+    }
+
+    post(user: User) {
+        return this.repo.save(user)
     }
 }
