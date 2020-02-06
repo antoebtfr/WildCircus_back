@@ -17,11 +17,11 @@ export class Show {
 
     @Column()
     freePlace!: number;
-    
+
     @Column({ type: 'boolean', default: false })
     onlyPremium!: boolean;
 
     @Column({type: 'varchar', length: 250})
-    img!: string; 
-    
+    img!: string;
+
 }

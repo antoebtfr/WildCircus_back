@@ -6,7 +6,7 @@ export const showController = (app: Application) => {
     const router = Router();
 
     router.get('/', async (req: Request, res: Response) => {
-        res.send(await service.get());
+        res.send(await service.getAll());
     });
 
     router.post('/', async (req: Request, res: Response) => {
@@ -21,6 +21,14 @@ export const showController = (app: Application) => {
     router.put('/:id', async (req: Request, res: Response) => {
         await service.deleteById(Number(req.params.id));
         res.send('La suppression a bien été effectuée').status(200);
+    })
+
+    router.get('/free', async (req: Request, res: Response) => {
+        res.send(await service.getOnlyFree());
+    });
+
+    router.get('/premium', async (req: Request, res: Response) => {
+        res.send(await service.getOnlyPremium());
     })
 
     app.use('/shows', router)

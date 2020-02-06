@@ -12,13 +12,19 @@ export class User {
     @Column ({ type: 'varchar', length: 45})
     email!: string;
 
-    @Column ({type:'varchar', length: 45})
-    pass!: string;
+    @Column ({type: 'varchar', length: 250, default:''})
+    img?: string;
+
+    @Column ({type:'varchar', length: 250})
+    password!: string;
 
     @Column ({type: 'boolean', default: false})
     isPremium!: boolean;
 
-    @Column ({type: 'varchar', length: 250, })
-    img!: string; 
-    
+    @Column ({type: 'boolean', default: false})
+    isAdmin!: boolean;
+
+    @Column ({type: 'boolean', default: false})
+    actived!: boolean;
+
 }

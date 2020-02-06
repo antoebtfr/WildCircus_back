@@ -1,17 +1,19 @@
+import { Token } from './../entity/token.entity';
 import { Show } from './../entity/show.entity';
-import { User } from "../entity/user.entity";
-import { createConnection } from "typeorm";
+import { User } from '../entity/user.entity';
+import { createConnection } from 'typeorm';
 
 export default async () => {
     await createConnection({
-        type: "mysql",
-        host: "localhost",
+        type: 'mysql',
+        host: 'localhost',
         username: process.env.SQL_user,
         password: process.env.SQL_pass,
-        database: "wildcircus",
+        database: 'wildcircus',
         entities: [
             User,
-            Show
+            Show,
+            Token
         ],
         synchronize: true,
         logging: false
