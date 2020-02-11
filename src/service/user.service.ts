@@ -9,12 +9,7 @@ export class UserService {
 
     async activeUserAccount(user: User) {
         user.actived = true;
-        const id = user.id;
-        const idToken = await this.tokenRepo.findOne({ where: { user: { id } } });
-        if (idToken !== undefined) {
-            this.tokenRepo.delete(idToken.id)
-        }
-        return this.repo.delete(id);
+        this.repo.update(user.id, user)
     }
 
     get() {
@@ -30,6 +25,6 @@ export class UserService {
     }
 
     deleteById(id: number) {
-        return this.repo.delete({ 'id' : id})
+        return this.repo.delete({ 'id': id })
     }
 }

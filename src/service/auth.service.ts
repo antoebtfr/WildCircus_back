@@ -83,6 +83,13 @@ export class AuthService {
             await this.userService.activeUserAccount(userToken.user)
         } */
 
+    async confirmation(tokenStr: string) {
+        const token = await this.tokenService.getByValue(tokenStr);
+        if (!token) {
+            throw new Error('Lien invalide');
+        }
+        await this.userService.activeUserAccount(token.user)
+    }
     private async nodemailer(token: string, user: User) {
         const testAccount = await createTestAccount()
 

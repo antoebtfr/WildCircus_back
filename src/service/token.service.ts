@@ -10,6 +10,6 @@ export class TokenService {
     }
 
     getByValue(value: string) {
-        return this.repo.findOne({value})
+        return this.repo.findOne({value}, {relations : ['user']})
     }
 }

@@ -21,8 +21,14 @@ export const AuthController = (app: Application) => {
     })
 
     AuthRouter.get('/confirmation/:token', async (req: Request, res: Response) => {
-        const user = req.body;
-        await authService.signUp
+        const tokenStr = req.params.token;
+
+        try {
+            authService.confirmation(tokenStr);
+            res.sendStatus(204);
+        } catch (error) {
+            res.sendStatus(400);
+        }
     });
 
     app.use('/auth', AuthRouter);

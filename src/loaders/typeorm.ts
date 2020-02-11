@@ -15,7 +15,7 @@ export default async () => {
             Show,
             Token
         ],
-        synchronize: true,
+        synchronize: false,
         logging: false
     }).then(connection => {
 
